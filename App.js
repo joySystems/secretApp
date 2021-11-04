@@ -1,9 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { Button, Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { Button, Platform, SafeAreaView, StyleSheet, Text, View, Pressable } from 'react-native';
 import { WebView } from 'react-native-webview';
+import Icon from 'react-native-ico-material-design';
 
 export default class App extends Component {
+   state = {
+    targetUrl : 'https://secretnight.ru/profile'
+    
+   }
+
+   changeUrl = (url) => {
+console.log(url + " is changed");
+this.setState({
+  targetUrl: url
+
+      
+})
+
+   }
+  
+  
+  
   render() {
     const runFirst = `
       window.isNativeApp = true;
@@ -14,7 +32,7 @@ export default class App extends Component {
 
     const run = `
       
-      document.querySelector('.nav').style.display = "none";
+     // document.querySelector('.nav').style.display = "none";
       true;
     `;
     setTimeout(() => {
@@ -33,7 +51,7 @@ export default class App extends Component {
           ref={(r) => (this.webref = r)}
 
           source={{
-            uri: 'https://secretnight.ru',
+            uri: this.state.targetUrl,
           }}
           injectedJavaScriptBeforeContentLoaded={runFirst}
           onNavigationStateChange={this.handleWebViewNavigationStateChange}
@@ -42,10 +60,15 @@ export default class App extends Component {
 
 
 
+<View >
 
 
 
-        
+
+</View>
+
+
+
       </SafeAreaView>
     );
   }
