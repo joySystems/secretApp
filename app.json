@@ -2,7 +2,7 @@
   "expo": {
     "name": "SecretNight",
     "slug": "secret-night",
-    "version": "1.0.3",
+    "version": "1.3.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -19,7 +19,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "ru.secretnight.app",
-      "buildNumber": "1.0.4"
+      "buildNumber": "7",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Allow to access camera. The usage of the camera is necessary so that the user can take a picture and adjust or update the user&apos;s avatar in the application profile settings.",
+        "NSPhotoLibraryUsageDescription": "Allow to access photo library. The usage of the photo library is necessary so that the user can upload an image to the application to customize or update the user&apos;s avatar in the application profile settings."
+      }
     },
     "android": {
       "package": "ru.secretnight.app",
